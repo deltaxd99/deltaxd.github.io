@@ -1,0 +1,134 @@
+body {
+    background: #fff7fb;
+    font-family: 'Segoe UI', sans-serif;
+    margin: 0;
+}
+header {
+    background: #e75480;
+    color: white;
+    text-align: center;
+    padding: 2rem 1rem 1rem 1rem;
+}
+header h1 {
+    margin: 0 0 0.5rem 0;
+}
+main {
+    max-width: 900px;
+    margin: 2rem auto;
+    padding: 0 1rem;
+}
+
+.albums {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 20px;
+}
+
+.album {
+    background: #fff;
+    border-radius: 14px;
+    padding: 26px 10px;
+    box-shadow: 0 4px 12px #f1b6ca;
+    text-align: center;
+    color: #e75480;
+    font-size: 1.2rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.2s, transform 0.2s;
+}
+.album:hover {
+    background: #ffe0ec;
+    transform: scale(1.03);
+}
+
+.gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 20px;
+}
+.photo {
+    background: #fff;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 12px #f1b6ca;
+    transition: transform 0.2s;
+    cursor: pointer;
+}
+.photo:hover {
+    transform: scale(1.03);
+}
+.photo img {
+    width: 100%;
+    display: block;
+    border-bottom: 1px solid #ffe0ec;
+}
+.caption {
+    padding: 10px;
+    text-align: center;
+    color: #e75480;
+    font-weight: 500;
+}
+#backBtn {
+    background: #e75480;
+    color: #fff;
+    border: none;
+    border-radius: 10px;
+    padding: 12px 24px;
+    font-size: 1rem;
+    cursor: pointer;
+    margin: 0 auto;
+    display: block;
+}
+#backBtn:hover {
+    background: #c14465;
+}
+footer {
+    background: #e75480;
+    color: #fff;
+    text-align: center;
+    padding: 1rem;
+    margin-top: 2rem;
+}
+
+/* Lightbox styles */
+.lightbox {
+    position: fixed;
+    z-index: 1000;
+    left: 0; top: 0;
+    width: 100vw; height: 100vh;
+    background: rgba(0,0,0,0.7);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+.lightbox img {
+    max-width: 90vw;
+    max-height: 80vh;
+    border-radius: 16px;
+    box-shadow: 0 4px 24px #e75480;
+}
+.lightbox .caption {
+    color: #fff;
+    margin-top: 16px;
+    font-size: 1.2rem;
+    text-align: center;
+    text-shadow: 0 2px 8px #e75480;
+}
+.close {
+    position: absolute;
+    top: 24px;
+    right: 36px;
+    font-size: 2.5rem;
+    color: #fff;
+    cursor: pointer;
+    font-weight: bold;
+    z-index: 1001;
+    text-shadow: 0 2px 8px #e75480;
+}
+@media (max-width: 600px) {
+    .lightbox img {
+        max-width: 98vw;
+        max-height: 60vh;
+    }
+}
